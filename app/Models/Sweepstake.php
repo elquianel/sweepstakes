@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Sweetstake extends Model
+class Sweepstake extends Model
 {
     use HasFactory;
 
@@ -36,5 +36,9 @@ class Sweetstake extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function participants(){
+        return $this->hasMany(Participant::class);
     }
 }
